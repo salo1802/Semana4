@@ -37,13 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
         Thread hilo =new Thread(()->{
             try{
+                //192.168.1.1 o 0
+                //getHostAdress()
                 InetAddress inetAddress = InetAddress.getLocalHost();
-                ip = "" + inetAddress;
+                ip = inetAddress.getHostAddress();
                 Log.e("direccion",ip);
         } catch (UnknownHostException e) {
                 e.printStackTrace();}
             runOnUiThread(()->{
-                ip.replace("localhost/"," ");
+              //  ip.replace("localhost/"," ");
                 iptext.setText(ip);
             });
             });
