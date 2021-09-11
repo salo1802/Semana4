@@ -34,15 +34,15 @@ public class HostsActivity extends AppCompatActivity {
         Thread hilo = new Thread(()->{
 
             try {
-                InetAddress[] AdressesIp = InetAddress.getAllByName(preferences.getString("direccion", null));
+               /* InetAddress[] AdressesIp = InetAddress.getAllByName(preferences.getString("direccion", null));
                 direcciones = new String[AdressesIp.length];
                 for (int i = 0; i< direcciones.length;i++){
                     direcciones[i] = "" + AdressesIp[i];
                     ips = ips + direcciones[i] + '\n';}
-                /*}
+                }*/
                 InetAddress AdressesIp = InetAddress.getByName(preferences.getString("direccion",null));
                int ipnum =  AdressesIp.hashCode();
-               ips = formatIpAdress(ipnum);*/
+               ips = formatIpAdress(ipnum);
 
             } catch (UnknownHostException e) {
                 e.printStackTrace();
